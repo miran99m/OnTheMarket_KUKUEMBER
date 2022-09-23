@@ -1,0 +1,26 @@
+
+/target/
+# Eclipse
+.classpath
+/*.project
+.settings/
+*.html
+.properties
+/screenShots
+pom.xml
+
+# Mac
+.DS_Store
+ 
+# Maven
+/log/
+/target/
+test-output
+/test-output/Default suite/Default test.html/
+/.idea/
+
+#Extentions
+.html
+.xml
+bin/
+Footer
