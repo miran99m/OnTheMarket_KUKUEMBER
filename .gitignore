@@ -7,7 +7,7 @@
 *.html
 .properties
 /screenShots
-pom.xml
+
 
 # Mac
 .DS_Store
