@@ -148,10 +148,21 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	public void clickOnMenuTab(String tabName) {
-		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id='main-nav']/li"));
+		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
 		for (WebElement eachMenu : listOfTabName) {
 			if (eachMenu.getText().contains(tabName)) {
 				eachMenu.click();
+				break;
+			}
+		}
+	}
+	
+	public void hoverOnMenuTab(String tabName) {
+		Actions action = new Actions(getDriver());
+		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
+		for (WebElement eachMenu : listOfTabName) {
+			if (eachMenu.getText().contains(tabName)) {
+				action.moveToElement(eachMenu).build().perform();
 				break;
 			}
 		}
