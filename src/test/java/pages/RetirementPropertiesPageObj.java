@@ -19,7 +19,7 @@ public class RetirementPropertiesPageObj {
 	@FindBy (xpath = "//*[@id=\"headlessui-tabs-panel-4\"]/div[1]/div/div/button")
 	public WebElement searchButton;
 	
-	@FindBy (xpath = "//*[@ id = 'maincontent']/div[3]")
+	@FindBy (xpath = "//*[@id=\"maincontent\"]/div[2]/h1")
 	public WebElement CouldNotViewLocation;
 		
 	@FindBy (xpath = "//*[@id=\"result-12124817\"]/div[1]/div/a/div/div/div[4]/div[1]/div/picture/img")

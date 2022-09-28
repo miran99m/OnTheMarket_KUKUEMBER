@@ -33,14 +33,13 @@ public class gulfire_retirementProperties_Step extends CommonMethods {
 	cm.hover(hp.BuyOption);
 	
 	
-	       cm.click(rp.RetirementPropertiesOption);
 	       
 	} 
 
 	@When("click on Retirement property for sale")
 	public void click_on_retirement_property_for_sale() {
-		cm.hover(rp.RetirementPropertiesOption);
-		rp.RetirementPropertiesOption.click();
+
+		cm.clickOnDropDownTab("Retirement property for sale");
 //		rp.RetirementPropertiesOption.click();
 	//	Actions action = new Actions(cm.getDriver());
 
