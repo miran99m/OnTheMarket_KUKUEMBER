@@ -11,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -19,6 +18,7 @@ public class BaseClass {
 	
 	
 	public static WebDriver driver;
+	public static CommonMethods cms;
 
 	public static WebDriver getDriver() {
 
@@ -53,6 +53,8 @@ public class BaseClass {
 			driver.get(BaseClass.getProperty("url"));
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+			cms = new CommonMethods();
+			cms.acceptCookies();
 			PageInitializer.initialize();
 		}
 

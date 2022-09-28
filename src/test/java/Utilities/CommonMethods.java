@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,6 +21,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 
@@ -157,16 +159,8 @@ public class CommonMethods extends PageInitializer {
 		}
 	}
 	
-	public void hoverOnMenuTab(String tabName) {
-		Actions action = new Actions(getDriver());
-		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
-		for (WebElement eachMenu : listOfTabName) {
-			if (eachMenu.getText().contains(tabName)) {
-				action.moveToElement(eachMenu).build().perform();
-				break;
-			}
-		}
-	}
+
+	
 
 	public void sendAlertText(String str) {
 		try {
@@ -250,18 +244,31 @@ public class CommonMethods extends PageInitializer {
 		Actions action = new Actions(getDriver());
 		action.doubleClick(element).build().perform();
 	}
+		
+	public void clickOnDropDownTab(String dropDownTabName) {
+		List<WebElement> list = BaseClass.getDriver().findElements
+				(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/div/div/div[1]/ul/li/a/div[2]/span"));
+		for (WebElement eachTab : list) {
+			if(eachTab.getText().equalsIgnoreCase(dropDownTabName)) {
+				eachTab.click();
+				break;
+			}
+		}
+	}
+	public void hoverOnMenuTab(String tabName) {
+		Actions action = new Actions(getDriver());
+		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
+		for (WebElement eachMenu : listOfTabName) {
+			if (eachMenu.getText().contains(tabName)) {
+				action.moveToElement(eachMenu).build().perform();
+				break;
+			}
+		}
+	}
 	
-//	public static String randomUsername() {
-//
-//		String email = fs.bothify("????##@gmail.com");
-//		return email;
-//	}
-//
-//	public static String randomPassword() {
-//		String password = fs.regexify("[a-z1-9]{10}");
-//		;
-//		return password;
-//	}
+	public void acceptCookies() {
+		click(getDriver().findElement(By.xpath("//*[@id=\"cookie-notification\"]/div/div[2]/button")));
+	}
 
 	public static String getTimeStamp() {
 		Date date = new Date();
@@ -298,4 +305,10 @@ public class CommonMethods extends PageInitializer {
 			return false;
 		}
 	}
+	
+	public void assertTitles(String expectedTitle) {
+		String actualTitle = getDriver().getTitle();
+		Assert.assertEquals(expectedTitle, actualTitle);		
+	}
+	
 }
