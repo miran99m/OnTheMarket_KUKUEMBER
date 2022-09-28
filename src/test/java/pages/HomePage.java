@@ -15,6 +15,8 @@ public class HomePage {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
+	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[2]/a/span")
+	public WebElement BuyOption ;
 
 
 }
