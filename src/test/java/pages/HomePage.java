@@ -17,6 +17,9 @@ public class HomePage {
 
 	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[2]/a/span")
 	public WebElement BuyOption ;
+	
+	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[4]/a/span")
+	public WebElement agentBtn;
 
 
 }
