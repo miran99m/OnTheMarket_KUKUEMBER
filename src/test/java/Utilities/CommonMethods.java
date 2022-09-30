@@ -311,4 +311,12 @@ public class CommonMethods extends PageInitializer {
 		Assert.assertEquals(expectedTitle, actualTitle);		
 	}
 	
+	public static void dynamicDropDown(WebElement element, String key) {
+
+		WebElement fromDropDown = element;
+		fromDropDown.click();
+		fromDropDown.sendKeys(key);
+	}
+	
+	
 }

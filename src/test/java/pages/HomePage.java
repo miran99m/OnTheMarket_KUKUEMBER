@@ -21,5 +21,7 @@ public class HomePage {
 	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[4]/a/span")
 	public WebElement agentBtn;
 
+	@FindBy (xpath="//*[@id='otm-main-nav']/div[1]/div/nav/ul/li[4]/div/div/div[2]/div[1]/div/div[2]/div/a")
+	public WebElement bookAnAgentVisit;
 
 }
