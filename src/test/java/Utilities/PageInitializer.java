@@ -1,10 +1,5 @@
 package Utilities;
 
-import java.util.Locale;
-
-import com.github.javafaker.service.FakeValuesService;
-import com.github.javafaker.service.RandomService;
-
 import pages.ContactAgentPage;
 import pages.FindAgentsPage;
 import pages.FindEstateLettingAgentsPage;
@@ -13,7 +8,6 @@ import pages.OneClickPropertiesPage;
 import pages.RetirementPropertiesPageObj;
 import pages.SoldPricesPageObj;
 import pages.lettingAgentsEstateAgentInLondonPage;
-import stepDefinition.Miran_SoldHouse;
 
 
 public class PageInitializer extends BaseClass {
