@@ -16,7 +16,7 @@ public class SoldPricesPageObj {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
-	@FindBy(xpath = "//select[@id='property-type-prices']")
+	@FindBy(xpath = "//*[@id='property-type-prices']")
 	private WebElement propertyType;
 
 	@FindBy(xpath = "//*[@id=\"search-bar-sold-prices\"]/div[1]/button")
@@ -42,7 +42,7 @@ public class SoldPricesPageObj {
 		String locationInputField = BaseClass.getDriver().findElement(By.xpath("//*[@id=\"search\"]"))
 				.getAttribute("value");
 		List<WebElement> list = BaseClass.getDriver()
-				.findElements(By.xpath("//*[@id=\"tab-container\"]/div[1]/div/div/h2"));
+				.findElements(By.xpath("//*[@id='tab-container']/div[1]/div/div/h2"));
 		for (WebElement eachSoldHouse : list) {
 			if (eachSoldHouse.getText().contains(locationInputField)) {
 				matches = true;
@@ -57,7 +57,7 @@ public class SoldPricesPageObj {
 	public Boolean propertyTypeMatches(String propTypeName) {
 		Boolean matches = null;
 		for (WebElement eachType : propTypeList) {
-			if (eachType.getText().contains(propTypeName)) {
+			if (eachType.getText().trim().contains(propTypeName)) {
 				matches = true;
 			} else {
 				matches = false;

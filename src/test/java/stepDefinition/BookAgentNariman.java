@@ -9,9 +9,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class BookAgentNariman extends CommonMethods {
-	@Given("User is on Home Page")
+	@Given("User is on HomePage")
 	public void user_is_on_home_page() {
-		BaseClass.getDriver();
 		String actualUrl = driver.getCurrentUrl();
 		String expectedUrl = BaseClass.getProperty("url");
 		Assert.assertEquals(expectedUrl, expectedUrl);

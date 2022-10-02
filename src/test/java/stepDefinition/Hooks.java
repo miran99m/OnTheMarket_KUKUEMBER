@@ -22,7 +22,7 @@ public class Hooks {
 //			pic=CommonMethods.takeScreenshot("Pass/" + scenario.getName());
 //		}
 //		scenario.attach(pic, "image/png", scenario.getName());
-//		BaseClass.tearDown();
+		BaseClass.tearDown();
 	}
 
 }

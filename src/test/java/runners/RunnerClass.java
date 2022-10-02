@@ -1,5 +1,6 @@
 package runners;
 
+
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
@@ -13,7 +14,8 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/features"
 		,glue="stepDefinition",
 		dryRun = false,
-		tags = "@tag1"
+		tags = "@Scenario2"
+		
 		)
 
 

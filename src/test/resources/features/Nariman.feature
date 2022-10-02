@@ -3,7 +3,7 @@
 Feature: Booking an Agent visit
  
 Background:
-		Given User is on Home Page
+		Given User is on HomePage
 		When User hover Agents menu tab
 		And User click on Book an agent visit
   	Then User should be on arange a free agent valuation page

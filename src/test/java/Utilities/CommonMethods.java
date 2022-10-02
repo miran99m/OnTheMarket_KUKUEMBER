@@ -22,12 +22,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-
-
 public class CommonMethods extends PageInitializer {
 
-	
 	public void clickRadioOrCheckBox(List<WebElement> radioOrCheckBox, String value) {
 		String actualValue;
 		for (WebElement el : radioOrCheckBox) {
@@ -38,8 +34,8 @@ public class CommonMethods extends PageInitializer {
 			}
 		}
 	}
-	
-	public void clickAddToCartButtonsAndCheckMarksDisplayed(List<WebElement> list, WebElement CheckMarkedAddToCart) {		
+
+	public void clickAddToCartButtonsAndCheckMarksDisplayed(List<WebElement> list, WebElement CheckMarkedAddToCart) {
 		for (WebElement item : list) {
 			item.click();
 			CheckMarkedAddToCart.isDisplayed();
@@ -52,7 +48,7 @@ public class CommonMethods extends PageInitializer {
 			Select select = new Select(element);
 			List<WebElement> options = select.getOptions();
 			for (WebElement el : options) {
-				if (el.getText().equals(textToSelect)) {
+				if (el.getText().equalsIgnoreCase(textToSelect)) {
 					select.selectByVisibleText(textToSelect);
 					break;
 				}
@@ -76,10 +72,11 @@ public class CommonMethods extends PageInitializer {
 
 	public static void selectByValue(WebElement element, String textTobeSelected) {
 		try {
+			waitForVisibility(element);
 			Select select = new Select(element);
 			List<WebElement> options = select.getOptions();
 			for (WebElement el : options) {
-				if (el.getText().equals(textTobeSelected)) {
+				if (el.getAttribute("value").equalsIgnoreCase(textTobeSelected)) {
 					select.selectByValue(textTobeSelected);
 					break;
 				}
@@ -145,12 +142,13 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	public void sendText(WebElement element, String text) {
-		element.clear();
+//		element.clear();
 		element.sendKeys(text);
 	}
 
 	public void clickOnMenuTab(String tabName) {
-		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
+		List<WebElement> listOfTabName = getDriver()
+				.findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
 		for (WebElement eachMenu : listOfTabName) {
 			if (eachMenu.getText().contains(tabName)) {
 				eachMenu.click();
@@ -158,9 +156,6 @@ public class CommonMethods extends PageInitializer {
 			}
 		}
 	}
-	
-
-	
 
 	public void sendAlertText(String str) {
 		try {
@@ -187,77 +182,84 @@ public class CommonMethods extends PageInitializer {
 		WebDriverWait wait = new WebDriverWait(getDriver(), Constants.EXPLICIT_WAIT_TIME);
 		return wait;
 	}
+
 //	waits for element to be clickable
 	public static WebElement waitForClickability(WebElement element) {
 		return getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
 	}
+
 //	waits for element to be visible
 	public static WebElement waitForVisibility(WebElement element) {
 		return getWaitObject().until(ExpectedConditions.visibilityOf(element));
 	}
+
 //	Waits for the element to be visible before clicks on it 
 	public static void click(WebElement element) {
 		waitForVisibility(element).click();
 	}
-	
+
 //	js executer(Declaring and initializing js object and returning it 
 	public static JavascriptExecutor getJSObject() {
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		return js;
 	}
+
 //	clicks on the element by JS
 	public static void jsClick(WebElement element) {
 		getJSObject().executeScript("arguments[0].click", element);
 	}
-	
+
 	public static void jsSentText(WebElement element, String text) {
 		String valueText = element.getAttribute("value");
-		getJSObject().executeScript("arguments[0].value='"+valueText+"'",text);
+		getJSObject().executeScript("arguments[0].value='" + valueText + "'", text);
 	}
-	
+
 	public static void scrollToElement(WebElement element) {
 		getJSObject().executeScript("arguments[0].scrollIntoView(true);", element);
 	}
-	
+
 	public static void scrollByPixel(int pixel) {
-		getJSObject().executeScript("window.scrollBy(0, "+pixel+")");
+		getJSObject().executeScript("window.scrollBy(0, " + pixel + ")");
 	}
-	
+
 	public void wait(int seconds) {
 		try {
 			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}	
+		}
 	}
+
 	public void hover(WebElement element) {
 		Actions action = new Actions(getDriver());
 		action.moveToElement(element).build().perform();
 	}
-	
+
 	public void dragsAndDrops(WebElement element, WebElement element2) {
 		Actions action = new Actions(getDriver());
-		action.dragAndDrop(element,element2).build().perform();
+		action.dragAndDrop(element, element2).build().perform();
 	}
-	
+
 	public void doubleClicks(WebElement element) {
 		Actions action = new Actions(getDriver());
 		action.doubleClick(element).build().perform();
 	}
-		
+
 	public void clickOnDropDownTab(String dropDownTabName) {
-		List<WebElement> list = BaseClass.getDriver().findElements
-				(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/div/div/div[1]/ul/li/a/div[2]/span"));
+		List<WebElement> list = BaseClass.getDriver().findElements(
+				By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/div/div/div[1]/ul/li/a/div[2]/span"));
 		for (WebElement eachTab : list) {
-			if(eachTab.getText().equalsIgnoreCase(dropDownTabName)) {
+			if (eachTab.getText().equalsIgnoreCase(dropDownTabName)) {
 				eachTab.click();
 				break;
 			}
 		}
 	}
+
 	public void hoverOnMenuTab(String tabName) {
 		Actions action = new Actions(getDriver());
-		List<WebElement> listOfTabName = getDriver().findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
+		List<WebElement> listOfTabName = getDriver()
+				.findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
 		for (WebElement eachMenu : listOfTabName) {
 			if (eachMenu.getText().contains(tabName)) {
 				action.moveToElement(eachMenu).build().perform();
@@ -265,7 +267,7 @@ public class CommonMethods extends PageInitializer {
 			}
 		}
 	}
-	
+
 	public void acceptCookies() {
 		click(getDriver().findElement(By.xpath("//*[@id=\"cookie-notification\"]/div/div[2]/button")));
 	}
@@ -305,18 +307,17 @@ public class CommonMethods extends PageInitializer {
 			return false;
 		}
 	}
-	
+
 	public void assertTitles(String expectedTitle) {
 		String actualTitle = getDriver().getTitle();
-		Assert.assertEquals(expectedTitle, actualTitle);		
+		Assert.assertEquals(expectedTitle, actualTitle);
 	}
-	
+
 	public static void dynamicDropDown(WebElement element, String key) {
 
 		WebElement fromDropDown = element;
 		fromDropDown.click();
 		fromDropDown.sendKeys(key);
 	}
-	
-	
+
 }
