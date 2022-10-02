@@ -16,55 +16,29 @@ public class SoldPricesPageObj {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
-	@FindBy(xpath = "//*[@id='property-type-prices']")
-	private WebElement propertyType;
-
-	@FindBy(xpath = "//*[@id=\"search-bar-sold-prices\"]/div[1]/button")
+	@FindBy(xpath = "//*[@id='headlessui-tabs-panel-4']/div[1]/div/div/button")
 	private WebElement searchButton;
+	
+	@FindBy(xpath = "//*[@id='headlessui-tabs-panel-4']/div[1]/div/div/input")
+	private WebElement searchField;
 
-	@FindBy(xpath = "//*[@id='tab-container']/div[1]/div/div/ul/li/span[2]")
-	private List<WebElement> propTypeList;
-
-	public WebElement getPropertyType() {
-		return propertyType;
+	public WebElement getSearchField() {
+		return searchField;
 	}
-
+	
 	public WebElement getSearchButton() {
 		return searchButton;
 	}
 	
-	public List<WebElement> getPropTypeList() {
-		return propTypeList;
-	}
+	
 
-	public Boolean codeMatchesHousesListed() {
-		Boolean matches = null;
-		String locationInputField = BaseClass.getDriver().findElement(By.xpath("//*[@id=\"search\"]"))
-				.getAttribute("value");
-		List<WebElement> list = BaseClass.getDriver()
-				.findElements(By.xpath("//*[@id='tab-container']/div[1]/div/div/h2"));
-		for (WebElement eachSoldHouse : list) {
-			if (eachSoldHouse.getText().contains(locationInputField)) {
-				matches = true;
-			} else {
-				matches = false;
-				break;
-			}
-		}
-		return matches;
-	}
 
-	public Boolean propertyTypeMatches(String propTypeName) {
-		Boolean matches = null;
-		for (WebElement eachType : propTypeList) {
-			if (eachType.getText().trim().contains(propTypeName)) {
-				matches = true;
-			} else {
-				matches = false;
-				break;
-			}
-		}
-		return matches;
-	}
+
+	
+
+
+	
+
+	
 
 }

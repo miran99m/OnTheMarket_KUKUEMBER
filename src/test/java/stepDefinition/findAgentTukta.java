@@ -118,7 +118,7 @@ public class findAgentTukta extends CommonMethods{
 	@Then("User should be on One Click Properties page")
 	public void user_should_be_on_one_click_properties_page() {
 		//Assert.assertEquals(BaseClass.getDriver().getTitle(),"1 Clickproperties - Action | OnTheMarket");
-		assertTitles("1 Clickproperties - Acton | OnTheMarket");
+		assertCurrentTitles("1 Clickproperties - Acton | OnTheMarket");
 	}
 	
 	

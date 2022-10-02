@@ -308,7 +308,7 @@ public class CommonMethods extends PageInitializer {
 		}
 	}
 
-	public void assertTitles(String expectedTitle) {
+	public void assertCurrentTitles(String expectedTitle) {
 		String actualTitle = getDriver().getTitle();
 		Assert.assertEquals(expectedTitle, actualTitle);
 	}
