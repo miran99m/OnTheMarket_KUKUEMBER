@@ -312,6 +312,11 @@ public class CommonMethods extends PageInitializer {
 		String actualTitle = getDriver().getTitle();
 		Assert.assertEquals(expectedTitle, actualTitle);
 	}
+	
+	public void assertCurrentUrl(String expectedUrl) {
+		String actualUrl = getDriver().getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+	}
 
 	public static void dynamicDropDown(WebElement element, String key) {
 
