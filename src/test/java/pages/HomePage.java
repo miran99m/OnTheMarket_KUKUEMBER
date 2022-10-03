@@ -24,4 +24,14 @@ public class HomePage {
 	@FindBy (xpath="//*[@id='otm-main-nav']/div[1]/div/nav/ul/li[4]/div/div/div[2]/div[1]/div/div[2]/div/a")
 	public WebElement bookAnAgentVisit;
 
+	@FindBy(xpath="//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[5]/a/span")
+    public WebElement NewHomesTab;
+	
+
+	@FindBy(xpath="//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[5]/div/div/div[1]/ul/li[1]/a/div[2]/span")
+	public WebElement NewHomesForSale;
+	
+	
+
+
 }

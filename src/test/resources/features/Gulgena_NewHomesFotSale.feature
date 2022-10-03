@@ -1,5 +1,5 @@
 @gulgena
- Feature:  click new build tab
+ Feature:  New homes for sale Functionality
   I want to be able to see the new build tab
 
   Background:
@@ -15,7 +15,7 @@
    |PostCode|
    |"DH5"   | 
 
-
+ @NegativeScenario
  Scenario Outline: Negative Testing 
    When   Write a zip code  in the  question box <PostCode>
    Then   Message Location not recognised
