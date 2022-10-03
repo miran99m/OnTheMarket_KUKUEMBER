@@ -1,20 +1,21 @@
 package Utilities;
 
-import java.util.Locale;
-
-import com.github.javafaker.service.FakeValuesService;
-import com.github.javafaker.service.RandomService;
 import pages.HomePage;
+import pages.HomePriceGuidePage;
 
 
 public class PageInitializer extends BaseClass {
 
 	public static CommonMethods cm;
+	public static HomePage hp;
+	public static HomePriceGuidePage hpg;
 
 
 	
 	public static void initialize() {
 		cm = new CommonMethods();
+		hp = new HomePage();
+		hpg = new HomePriceGuidePage();
 		
 	}
 }

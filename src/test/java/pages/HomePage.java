@@ -15,6 +15,13 @@ public class HomePage {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
+	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[1]/a/span")
+	public WebElement valueMyHome;
+	
+	@FindBy(xpath = "//*[ @href='/price-guide/']")
+	public WebElement homePriceGuide;
+	
+	
 
 
 }
