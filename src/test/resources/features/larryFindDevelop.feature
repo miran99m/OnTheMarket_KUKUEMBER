@@ -4,13 +4,13 @@ Feature: Find Developments
 	Background:
 		Given User is on Home Page "OnTheMarket | Property, Houses & Flats for Sale & to Rent"
 	
-	@test1
+	@ltest1
   Scenario: Accepting Cookies
     And User is asked to accept cookies
     Then User accepts cookies
     * cookies accept request should be gone
     
-	@test2
+	@ltest2
 	Scenario: New Developments Search
 		Then User should open New Homes menu
 		And click on Find Developments
@@ -19,7 +19,7 @@ Feature: Find Developments
 		And send a search request
 		Then User should recieve <search> results
 		
-		@city
+		@lcity
 		Examples:
 			| 		search 			 |
 			| "Bristol" 			 |
@@ -27,7 +27,7 @@ Feature: Find Developments
 			| "Arun"				 	 |
 			| "Moray"				 	 |
 		
-		@postal
+		@lpostal
 		Examples:
 			|		search	|
 			| "BA1 2LR"	|

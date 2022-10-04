@@ -108,9 +108,27 @@ public class Assertion_StepDefs extends CommonMethods{
         Assert.assertTrue(nfs.unrecognisedLocation.getText().contains("not recognised"));
     }
 
-
+// 	Larry
+	@Given("User is asked to accept cookies")
+	public void user_is_asked_to_accept_cookies() {
+		Assert.assertTrue(hp.getCookiesAccept().isDisplayed());
+	}
 	
+	@Then("cookies accept request should be gone")
+	public void cookies_accept_request_should_be_gone() {
+		wait(2);
+		Assert.assertTrue(isElementDisplayed(hp.getCookiesAccept()));
+	}
 	
+	@When("User is on Find Developments")
+	public void user_is_on_find_developments() {
+		assertCurrentTitles("New Property Developments | Find New Builds | OnTheMarket");
+		wait(1);
+	}
 	
+	@Then("User should recieve {string} results")
+	public void user_should_recieve_results(String string) {
+	    Assert.assertTrue(getDriver().getTitle().contains(string));
+	}
 	
 }
