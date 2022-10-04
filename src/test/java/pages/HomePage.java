@@ -39,6 +39,9 @@ public class HomePage {
 	@FindBy(xpath="//*[@id='otm-main-nav']/div/div/nav/ul/li[5]/div/div/div/ul/li")
 	private List<WebElement> newHomesMenu;
 	
+	@FindBy(xpath = "//*[@id='headlessui-tabs-tab-2']")
+	public WebElement rentButton;
+	
 	public WebElement getBuyOption() {
 		return buyOption;
 	}
