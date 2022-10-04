@@ -11,6 +11,7 @@ import pages.OneClickPropertiesPage;
 import pages.RentSearchPage;
 import pages.RetirementPropertiesPageObj;
 import pages.SearchedSoldPricesPageObj;
+import pages.SignInFunctionalityPageObj;
 import pages.SoldPricesPageObj;
 import pages.lettingAgentsEstateAgentInLondonPage;
 import pages.propertyValuationPage;
@@ -33,6 +34,7 @@ public class PageInitializer extends BaseClass {
 	public static HomePriceGuidePage hpg;
   public static NewHomesForSaleObj nfs;
   public static RentSearchPage rsp;
+  public static SignInFunctionalityPageObj sfp;
 	
 	public static void initialize() {
 		cm = new CommonMethods();
@@ -50,6 +52,6 @@ public class PageInitializer extends BaseClass {
 		hpg = new HomePriceGuidePage();
 		nfs = new NewHomesForSaleObj();
     	rsp = new RentSearchPage ();
-
+    	sfp = new SignInFunctionalityPageObj();
 	}
 }

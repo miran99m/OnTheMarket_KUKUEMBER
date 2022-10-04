@@ -8,14 +8,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Assertion_StepDefs extends CommonMethods{
-
+public class Assertion_StepDefs extends CommonMethods {
 
 	@Given("User is on Home Page {string}")
 	public void user_is_on_home_page(String string) {
 		assertCurrentTitles(string);
 	}
-	
+
 //  Miran 
 	@Then("it shows only homes with that postCode")
 	public void it_shows_only_homes_with_that_postCode() {
@@ -26,49 +25,52 @@ public class Assertion_StepDefs extends CommonMethods{
 	public void all_homes_with_that_should_show(String propType) {
 		Assert.assertTrue(ssp.propertyTypeMatches(propType));
 	}
-	
-	
+
 // Gulfire
 
 	@Then("It should display Location not recognised")
 	public void it_should_display_location_not_recognised() {
 		Assert.assertTrue(rp.CouldNotViewLocation.getText().contains("not recognised"));
 	}
+
 	@Then("The Retirement Text Should display")
 	public void the_retirement_text_should_display() {
 		Assert.assertEquals(rp.RetirementButton.getText(), "Retirement");
 	}
-	
+
 //	Tukta
 	@When("User should be on findAgents page")
 	public void user_should_be_on_find_agents_page() {
 		assertCurrentUrl(BaseClass.getProperty("agentPageURL"));
 	}
+
 	@Then("User should be on Letting agents & estate agents in London Page")
 	public void user_should_be_on_letting_agents_estate_agents_in_london_page() {
 		cm.wait(2);
 		assertCurrentTitles("Estate agents in London | Letting agents | OnTheMarket");
 	}
+
 	@When("User should be on Contact Agent page")
 	public void user_should_be_on_contact_agent_page() {
 		cm.wait(2);
 		assertCurrentTitles("OnTheMarket | Property, Houses & Flats for Sale & to Rent");
 	}
+
 	@Then("User should be on One Click Properties page")
 	public void user_should_be_on_one_click_properties_page() {
 		cm.wait(2);
 		assertCurrentTitles("1 Clickproperties - Acton | OnTheMarket");
 	}
-	
 
 //	Nariman
-	
+
 	@Then("User should be on arange a free agent valuation page")
 	public void user_should_be_on_arange_a_free_agent_valuation_page() {
 		String actualUrl = driver.getCurrentUrl();
 		String expectedUrl = BaseClass.getProperty("property-valuationURL");
 		Assert.assertEquals(actualUrl, expectedUrl);
 	}
+
 	@Then("User should receive Please enter a valid telephone number on the next page")
 	public void user_should_receive_please_enter_a_valid_telephone_number_on_the_next_page() {
 		String errmsg = pv.validTelephoneNumber.getText();
@@ -81,54 +83,79 @@ public class Assertion_StepDefs extends CommonMethods{
 		Assert.assertEquals(confMsg, "Your request for a property valuation has been sent to your chosen agents.");
 
 	}
-	
+
 // Chrisitan
-    @Then("If user is on Home Price guide page")
-    public void user_verifies_title() {
-        String actualTitle = driver.getTitle();
-        String expectedTitle = BaseClass.getProperty("expectedTitle");
-        Assert.assertEquals(actualTitle, expectedTitle);
-        cm.wait(1);
-    }
-    @Then("Verify user in on page for that specific post code")
-    public void verify_user_in_on_page_for_that_specific_post_code() {
-        String actualUrl = driver.getCurrentUrl();
-        String expectedUrl = BaseClass.getProperty("expectedURL");
-        Assert.assertEquals(actualUrl, expectedUrl);
-        cm.wait(1);
-    }
-    
+	@Then("If user is on Home Price guide page")
+	public void user_verifies_title() {
+		String actualTitle = driver.getTitle();
+		String expectedTitle = BaseClass.getProperty("expectedTitle");
+		Assert.assertEquals(actualTitle, expectedTitle);
+		cm.wait(1);
+	}
+
+	@Then("Verify user in on page for that specific post code")
+	public void verify_user_in_on_page_for_that_specific_post_code() {
+		String actualUrl = driver.getCurrentUrl();
+		String expectedUrl = BaseClass.getProperty("expectedURL");
+		Assert.assertEquals(actualUrl, expectedUrl);
+		cm.wait(1);
+	}
+
 // Gulgena
-    @Then("houses for sell displayed")
-    public void houses_for_sell_displayed() {
-    Assert.assertEquals(nfs.NewBuild.getText(), "New build");
-    }
-    @Then("Message Location not recognised")
-    public void message_location_not_recognised() {
-        Assert.assertTrue(nfs.unrecognisedLocation.getText().contains("not recognised"));
-    }
+	@Then("houses for sell displayed")
+	public void houses_for_sell_displayed() {
+		Assert.assertEquals(nfs.NewBuild.getText(), "New build");
+	}
+
+	@Then("Message Location not recognised")
+	public void message_location_not_recognised() {
+		Assert.assertTrue(nfs.unrecognisedLocation.getText().contains("not recognised"));
+	}
 
 // 	Larry
 	@Given("User is asked to accept cookies")
 	public void user_is_asked_to_accept_cookies() {
 		Assert.assertTrue(hp.getCookiesAccept().isDisplayed());
 	}
-	
+
 	@Then("cookies accept request should be gone")
 	public void cookies_accept_request_should_be_gone() {
 		wait(2);
 		Assert.assertTrue(isElementDisplayed(hp.getCookiesAccept()));
 	}
-	
+
 	@When("User is on Find Developments")
 	public void user_is_on_find_developments() {
 		assertCurrentTitles("New Property Developments | Find New Builds | OnTheMarket");
 		wait(1);
 	}
-	
+
 	@Then("User should recieve {string} results")
 	public void user_should_recieve_results(String string) {
-	    Assert.assertTrue(getDriver().getTitle().contains(string));
+		Assert.assertTrue(getDriver().getTitle().contains(string));
 	}
+
 	
+	
+//  Jandrey
+	@Then("User must succesfully sign in")
+	public void user_must_succesfully_sign_in() {
+		Assert.assertTrue(sfp.validateSingInFunctionality.isDisplayed());
+
+	}
+
+	@Then("it shows password reset")
+	public void it_shows_password_reset() {
+
+		Assert.assertTrue(sfp.validatePasswordReset.isDisplayed());
+
+	}
+
+	@Then("Validate user could digit code")
+	public void validate_user_could_digit_code() {
+
+		Assert.assertTrue(sfp.ValidateResetCode.isDisplayed());
+
+	}
+
 }

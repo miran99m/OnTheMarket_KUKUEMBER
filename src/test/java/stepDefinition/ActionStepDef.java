@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 
 import Utilities.BaseClass;
 import Utilities.CommonMethods;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -328,5 +329,60 @@ public class ActionStepDef extends CommonMethods {
 		scrollByPixel(100);
 		fdp.getFindDevSearchButton().click();
 	}
+	
+//	Jandrey
+	@Given("User click on Sign in button")
+	public void user_click_on_sign_in_button() {
+	   
+	    sfp.signInButton.click();
+	}
+
+
+	@When("User provide {string}")
+	public void user_provide(String string) {
+	  
+	    sfp.enterEmail.sendKeys(string);
+	}
+
+	@When("User click next button")
+	public void user_click_next_button() {
+	  
+	    sfp.nextButton.click();
+	    
+	}
+
+	@When("User provide now {string}")
+	public void user_provide_now(String string) {
+	   
+	    sfp.password.sendKeys(string);
+	    
+	}
+
+
+	@Then("User click on login button")
+	public void user_click_on_login_button() {
+	    sfp.SignInPasswordButton.click();
+	    
+	}
+	
+	@When("User select Forgotten password")
+	public void user_select_forgotten_password() {
+	  
+	    sfp.forgottenPassword.click();
+	    
+	}
+	
+	@Then("User click to reset a code")
+	public void user_click_to_reset_a_code() {
+	  
+	    sfp.sendResetCode.click();
+	}
+
+	@When("User reset {string}")
+	public void user_reset(String string) {
+	 
+	    sfp.ResetEmail.sendKeys(string);
+	}
+
 	
 }
