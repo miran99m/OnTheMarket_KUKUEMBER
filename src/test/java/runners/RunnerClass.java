@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/features"
 		,glue="stepDefinition",
 		dryRun = false,
-		tags = "@Miran and @Scenario1 or @Scenario2"
+		tags = "@ltest1"
 		
 		)
 

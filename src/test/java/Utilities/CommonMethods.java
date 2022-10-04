@@ -12,6 +12,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -323,6 +324,17 @@ public class CommonMethods extends PageInitializer {
 		WebElement fromDropDown = element;
 		fromDropDown.click();
 		fromDropDown.sendKeys(key);
+	}
+	
+	public Boolean isElementDisplayed(WebElement element) {
+		
+		try {
+			element.isDisplayed();
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		
 	}
 
 }

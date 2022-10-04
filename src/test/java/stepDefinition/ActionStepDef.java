@@ -2,6 +2,7 @@ package stepDefinition;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import Utilities.BaseClass;
 import Utilities.CommonMethods;
@@ -46,7 +47,7 @@ public class ActionStepDef extends CommonMethods {
 //	Gulfire
 	@When("Hover On Buy menu tab")
 	public void hover_on_buy_menu_tab() {
-		cm.hover(hp.BuyOption);
+		cm.hover(hp.getBuyOption());
 
 	}
 
@@ -77,7 +78,7 @@ public class ActionStepDef extends CommonMethods {
 //	Tukta
 	@When("User hover Agents button")
 	public void user_hover_agents_button() {
-		hover(hp.agentBtn);
+		hover(hp.getAgentBtn());
 		cm.wait(2);
 	}
 
@@ -154,12 +155,12 @@ public class ActionStepDef extends CommonMethods {
 //	Nariman
 	@When("User hover Agents menu tab")
 	public void user_hover_agents_menu_tab() {
-		cm.hover(hp.agentBtn);
+		cm.hover(hp.getAgentBtn());
 	}
 
 	@When("User click on Book an agent visit")
 	public void user_click_on_book_an_agent_visit() {
-		hp.bookAnAgentVisit.click();
+		hp.getBookAnAgentVisit().click();
 	}
 
 	@When("User enters postcode")
@@ -222,4 +223,35 @@ public class ActionStepDef extends CommonMethods {
 		pv.send.click();
 	}
 
+//	Larry
+	@Then("User accepts cookies")
+	public void user_accepts_cookies() {
+	    wait(5);
+		hp.getCookiesAccept().click();
+	}
+	
+	@Then("User should open New Homes menu")
+	public void user_should_open_new_homes_menu() {
+	    hover(hp.getMainNavMenu().get(4));
+	    wait(1);
+	}
+	
+	@Then("click on Find Developments")
+	public void click_on_find_developments() {
+	    hp.getNewHomesMenu().get(1).click();
+	}
+	
+	@Then("put {string} into the search box")
+	public void put_into_the_search_box(String string) {
+	    fdp.getFindDevSearchBox().sendKeys(string);
+	    wait(1);
+	}
+	
+	@Then("send a search request")
+	public void send_a_search_request() {
+		fdp.getFindDevSearchBox().sendKeys(Keys.RETURN);
+		scrollByPixel(100);
+		fdp.getFindDevSearchButton().click();
+	}
+	
 }

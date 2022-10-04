@@ -2,6 +2,7 @@ package Utilities;
 
 import pages.ContactAgentPage;
 import pages.FindAgentsPage;
+import pages.FindDevelopmentsPage;
 import pages.FindEstateLettingAgentsPage;
 import pages.HomePage;
 import pages.OneClickPropertiesPage;
@@ -25,6 +26,7 @@ public class PageInitializer extends BaseClass {
 	public static OneClickPropertiesPage ocp;
 	public static propertyValuationPage pv;
 	public static SearchedSoldPricesPageObj ssp;
+	public static FindDevelopmentsPage fdp;
 	
 	
 	public static void initialize() {
@@ -39,6 +41,7 @@ public class PageInitializer extends BaseClass {
 		ocp = new OneClickPropertiesPage();
 		pv = new propertyValuationPage();
 		ssp = new SearchedSoldPricesPageObj();
+		fdp = new FindDevelopmentsPage();
 			
 	}
 }
