@@ -227,14 +227,14 @@ public class ActionStepDef extends CommonMethods {
 //	Christian
 	@When("User hovers over Value my home tab")
     public void user_hovers_over_value_my_home_tab() {
-    cm.hover(hp.valueMyHome);
+    cm.hover(hp.getValueMyHome());
     cm.wait(1);
 
     }
 
     @Then("click on Home Price Guide")
     public void click_on_home_price_guide() {
-        hp.homePriceGuide.click();
+        hp.getHomePriceGuide().click();
         cm.wait(1);
     
     }
