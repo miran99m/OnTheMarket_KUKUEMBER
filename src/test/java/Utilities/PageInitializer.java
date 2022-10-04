@@ -4,6 +4,8 @@ import pages.ContactAgentPage;
 import pages.FindAgentsPage;
 import pages.FindEstateLettingAgentsPage;
 import pages.HomePage;
+import pages.HomePriceGuidePage;
+import pages.NewHomesForSaleObj;
 import pages.OneClickPropertiesPage;
 import pages.RetirementPropertiesPageObj;
 import pages.SearchedSoldPricesPageObj;
@@ -25,7 +27,9 @@ public class PageInitializer extends BaseClass {
 	public static OneClickPropertiesPage ocp;
 	public static propertyValuationPage pv;
 	public static SearchedSoldPricesPageObj ssp;
-	
+	public static HomePriceGuidePage hpg;
+    public static NewHomesForSaleObj nfs;
+
 	
 	public static void initialize() {
 		cm = new CommonMethods();
@@ -39,6 +43,8 @@ public class PageInitializer extends BaseClass {
 		ocp = new OneClickPropertiesPage();
 		pv = new propertyValuationPage();
 		ssp = new SearchedSoldPricesPageObj();
-			
+		hpg = new HomePriceGuidePage();
+        nfs = new NewHomesForSaleObj();
+
 	}
 }

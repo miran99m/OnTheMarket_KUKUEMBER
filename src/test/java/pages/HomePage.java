@@ -23,5 +23,11 @@ public class HomePage {
 
 	@FindBy (xpath="//*[@id='otm-main-nav']/div[1]/div/nav/ul/li[4]/div/div/div[2]/div[1]/div/div[2]/div/a")
 	public WebElement bookAnAgentVisit;
+	
+    @FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[1]/a/span")
+    public WebElement valueMyHome;
+    
+    @FindBy(xpath = "//*[ @href='/price-guide/']")
+    public WebElement homePriceGuide;
 
 }
