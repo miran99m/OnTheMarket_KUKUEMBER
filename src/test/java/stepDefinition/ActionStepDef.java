@@ -222,6 +222,81 @@ public class ActionStepDef extends CommonMethods {
 	public void user_clicks_send_button() {
 		pv.send.click();
 	}
+	
+	
+//	Christian
+	@When("User hovers over Value my home tab")
+    public void user_hovers_over_value_my_home_tab() {
+    cm.hover(hp.valueMyHome);
+    cm.wait(1);
+
+    }
+
+    @Then("click on Home Price Guide")
+    public void click_on_home_price_guide() {
+        hp.homePriceGuide.click();
+        cm.wait(1);
+    
+    }
+
+    @Then("Verify that Home Price Guide tab is selected")
+    public void verify_that_home_price_guide_tab_is_selected() {
+        hpg.homePriceGuideSearch.isSelected();
+        cm.wait(1);
+    }
+
+    @Then("Click on Agent Valuation tab and verify it is selected")
+    public void click_on_agent_valuation_tab_and_verify_it_is_selected() {
+        hpg.agentValuation.click();
+        hpg.agentValuation.isSelected();
+        cm.wait(1);
+    }
+
+    @Then("Click on Instant Valuation tab and verify it is selected")
+    public void click_on_instant_valuation_tab_and_verify_it_is_selected() {
+        hpg.instantValuation.click();
+        hpg.instantValuation.isSelected();
+        cm.wait(1);
+    }
+
+    @Then("Enter postcode and hit enter")
+    public void enter_postcode_and_hit_enter() {
+        hpg.searchBar.sendKeys(BaseClass.getProperty("postcode"));
+        hpg.searchBar.sendKeys(Keys.ENTER);
+        cm.wait(1);
+    }
+    
+    
+//	Gulgena
+    
+    @When("Hover on New Homes Tab")
+    public void hover_on_new_homes_tab() {
+    cm.hoverOnMenuTab("New homes");
+    }
+
+ 
+    @When("Click on the New homes for sale")
+    public void click_on_the_new_homes_for_sale() {
+        cm.clickOnDropDownTab("New homes for sale");
+    }
+
+    @When("Write a  UK zip code  in the  question box {string}")
+    public void write_a_uk_zip_code_in_the_question_box(String string) {
+        nfs.AddressInput.sendKeys(string);
+        nfs.SearchButton.click();
+    }
+
+    @When("we click on the houses for sale tab")
+    public void we_click_on_the_houses_for_sale_tab() {
+        nfs.houseForSale.click();
+    }
+
+    @When("Write a zip code  in the  question box {string}")
+    public void write_a_zip_code_in_the_question_box(String string) {
+         nfs.AddressInput.sendKeys(string);
+         nfs.SearchButton.click();
+    }
+
 
 //	Larry
 	@Then("User accepts cookies")

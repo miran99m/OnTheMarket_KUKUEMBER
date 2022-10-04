@@ -23,6 +23,12 @@ public class HomePage {
 
 	@FindBy (xpath="//*[@id='otm-main-nav']/div[1]/div/nav/ul/li[4]/div/div/div[2]/div[1]/div/div[2]/div/a")
 	private WebElement bookAnAgentVisit;
+  
+  @FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[1]/a/span")
+  private WebElement valueMyHome;
+    
+  @FindBy(xpath = "//*[ @href='/price-guide/']")
+  private WebElement homePriceGuide;
 	
 	@FindBy(xpath="//*[@id='app-container']/div/div/div/div/button")
 	private WebElement cookiesAccept;
@@ -44,6 +50,14 @@ public class HomePage {
 	public WebElement getBookAnAgentVisit() {
 		return bookAnAgentVisit;
 	}
+  
+  public WebElement getValueMyHome(){
+    return valueMyHome;
+  }
+  
+  public WebElement getHomePriceGuide(){
+    return homePriceGuide;
+  }
 	
 	public WebElement getCookiesAccept() {
 		return cookiesAccept;

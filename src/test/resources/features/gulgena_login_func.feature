@@ -1,12 +1,12 @@
-@gulgena
-Feature: click new build tab
+@Gulgena
+Feature: New homes for sale Functionality
   I want to be able to see the new build tab
 
   Background: 
-    Given User is on HomePage
+    Given User is on Home Page "OnTheMarket | Property, Houses & Flats for Sale & to Rent"
     When Hover on New Homes Tab
     And Click on the New homes for sale
-
+@VerifyHousesOnSale
   Scenario Outline: happy path
     When Write a  UK zip code  in the  question box <PostCode>
     And we click on the houses for sale tab
@@ -15,7 +15,7 @@ Feature: click new build tab
     Examples: 
       | PostCode |
       | "DH5"    |
-
+@NegativeScenario
   Scenario Outline: Negative Testing
     When Write a zip code  in the  question box <PostCode>
     Then Message Location not recognised

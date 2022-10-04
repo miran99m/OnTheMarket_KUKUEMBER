@@ -81,6 +81,32 @@ public class Assertion_StepDefs extends CommonMethods{
 		Assert.assertEquals(confMsg, "Your request for a property valuation has been sent to your chosen agents.");
 
 	}
+	
+// Chrisitan
+    @Then("If user is on Home Price guide page")
+    public void user_verifies_title() {
+        String actualTitle = driver.getTitle();
+        String expectedTitle = BaseClass.getProperty("expectedTitle");
+        Assert.assertEquals(actualTitle, expectedTitle);
+        cm.wait(1);
+    }
+    @Then("Verify user in on page for that specific post code")
+    public void verify_user_in_on_page_for_that_specific_post_code() {
+        String actualUrl = driver.getCurrentUrl();
+        String expectedUrl = BaseClass.getProperty("expectedURL");
+        Assert.assertEquals(actualUrl, expectedUrl);
+        cm.wait(1);
+    }
+    
+// Gulgena
+    @Then("houses for sell displayed")
+    public void houses_for_sell_displayed() {
+    Assert.assertEquals(nfs.NewBuild.getText(), "New build");
+    }
+    @Then("Message Location not recognised")
+    public void message_location_not_recognised() {
+        Assert.assertTrue(nfs.unrecognisedLocation.getText().contains("not recognised"));
+    }
 
 // 	Larry
 	@Given("User is asked to accept cookies")

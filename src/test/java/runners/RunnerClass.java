@@ -12,9 +12,9 @@ import io.cucumber.junit.CucumberOptions;
 				
 		},
 		features = "src/test/resources/features"
-		,glue="stepDefinition",
+		,glue={"stepDefinition"},
 		dryRun = false,
-		tags = "@ltest1"
+		tags = "@Gulgena and @VerifyHousesOnSale or @NegativeScenario"
 		
 		)
 
