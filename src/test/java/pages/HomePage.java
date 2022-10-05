@@ -2,6 +2,7 @@ package pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,7 +27,7 @@ public class HomePage {
 	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[1]/a/span")
 	private WebElement valueMyHome;
 
-	@FindBy(xpath = "//*[ @href='/price-guide/']")
+	@FindBy(xpath = "//*[@href='/price-guide/']")
 	private WebElement homePriceGuide;
 
 	@FindBy(xpath = "//*[@id='app-container']/div/div/div/div/button")
@@ -40,6 +41,20 @@ public class HomePage {
 
 	@FindBy(xpath = "//*[@id='headlessui-tabs-tab-2']")
 	public WebElement rentButton;
+	
+	@FindBy(xpath = "//*[@id=\"cookie-notification\"]/div/div[2]/button")
+	public String acceptCookieButton;
+	
+	@FindBy(xpath = "//*[@id='otm-main-nav']/div[1]/div/nav/ul/li/div/div/div[1]/ul/li/a/div[2]/span")
+	public List<WebElement> listOfDropDownMenu;
+	
+	@FindBy(xpath = "//*[@id='otm-main-nav']/div[1]/div/nav/ul/li/a/span")
+	public List<WebElement> listOfTabName;
+	
+
+	
+	
+	
 
 	public WebElement getBuyOption() {
 		return buyOption;

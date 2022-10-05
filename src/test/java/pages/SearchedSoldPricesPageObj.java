@@ -42,34 +42,42 @@ public class SearchedSoldPricesPageObj {
 	public List<WebElement> getPropTypeList() {
 		return propTypeList;
 	}
-	
-	
-	
-	
-	public Boolean propertyTypeMatches(String propTypeName) {
-		Boolean matches = null;
-		for (WebElement eachType : propTypeList) {
-			if (eachType.getText().trim().contains(propTypeName)) {
-				matches = true;
-			} else {
-				matches = false;
-				break;
-			}
-		}
-		return matches;
+
+	public WebElement getLocationField() {
+		return locationField;
 	}
-	public Boolean codeMatchesHousesListed() {
-		Boolean matches = null;
-		String locationInputField = locationField.getAttribute("value");
-		for (WebElement eachSoldHouse : searchedHouseList) {
-			if (eachSoldHouse.getText().contains(locationInputField)) {
-				matches = true;
-			} else {
-				matches = false;
-				break;
-			}
-		}
-		return matches;
+
+	public List<WebElement> getSearchedHouseList() {
+		return searchedHouseList;
 	}
+	
+	
+	
+	
+//	public Boolean propertyTypeMatches(String propTypeName) {
+//		Boolean matches = null;
+//		for (WebElement eachType : propTypeList) {
+//			if (eachType.getText().trim().contains(propTypeName)) {
+//				matches = true;
+//			} else {
+//				matches = false;
+//				break;
+//			}
+//		}
+//		return matches;
+//	}
+//	public Boolean codeMatchesHousesListed() {
+//		Boolean matches = null;
+//		String locationInputField = locationField.getAttribute("value");
+//		for (WebElement eachSoldHouse : searchedHouseList) {
+//			if (eachSoldHouse.getText().contains(locationInputField)) {
+//				matches = true;
+//			} else {
+//				matches = false;
+//				break;
+//			}
+//		}
+//		return matches;
+//	}
 
 }

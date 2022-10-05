@@ -18,12 +18,12 @@ public class Assertion_StepDefs extends CommonMethods {
 //  Miran 
 	@Then("it shows only homes with that postCode")
 	public void it_shows_only_homes_with_that_postCode() {
-		Assert.assertTrue(ssp.codeMatchesHousesListed());
+		Assert.assertTrue(cm.codeMatchesHousesListed());
 	}
 
 	@Then("all homes with that {string} should show")
 	public void all_homes_with_that_should_show(String propType) {
-		Assert.assertTrue(ssp.propertyTypeMatches(propType));
+		Assert.assertTrue(cm.propertyTypeMatches(propType));
 	}
 
 // Gulfire

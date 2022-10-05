@@ -148,9 +148,7 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	public void clickOnMenuTab(String tabName) {
-		List<WebElement> listOfTabName = getDriver()
-				.findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
-		for (WebElement eachMenu : listOfTabName) {
+		for (WebElement eachMenu : hp.listOfTabName) {
 			if (eachMenu.getText().contains(tabName)) {
 				eachMenu.click();
 				break;
@@ -247,9 +245,7 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	public void clickOnDropDownTab(String dropDownTabName) {
-		List<WebElement> list = BaseClass.getDriver().findElements(
-				By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/div/div/div[1]/ul/li/a/div[2]/span"));
-		for (WebElement eachTab : list) {
+		for (WebElement eachTab : hp.listOfDropDownMenu) {
 			if (eachTab.getText().equalsIgnoreCase(dropDownTabName)) {
 				eachTab.click();
 				break;
@@ -259,9 +255,7 @@ public class CommonMethods extends PageInitializer {
 
 	public void hoverOnMenuTab(String tabName) {
 		Actions action = new Actions(getDriver());
-		List<WebElement> listOfTabName = getDriver()
-				.findElements(By.xpath("//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li/a/span"));
-		for (WebElement eachMenu : listOfTabName) {
+		for (WebElement eachMenu : hp.listOfTabName) {
 			if (eachMenu.getText().contains(tabName)) {
 				action.moveToElement(eachMenu).build().perform();
 				break;
@@ -335,6 +329,32 @@ public class CommonMethods extends PageInitializer {
 			return false;
 		}
 		
+	}
+	
+	public Boolean propertyTypeMatches(String propTypeName) {
+		Boolean matches = null;
+		for (WebElement eachType : ssp.getPropTypeList()) {
+			if (eachType.getText().trim().contains(propTypeName)) {
+				matches = true;
+			} else {
+				matches = false;
+				break;
+			}
+		}
+		return matches;
+	}
+	public Boolean codeMatchesHousesListed() {
+		Boolean matches = null;
+		String locationInputField = ssp.getLocationField().getAttribute("value");
+		for (WebElement eachSoldHouse : ssp.getSearchedHouseList()) {
+			if (eachSoldHouse.getText().contains(locationInputField)) {
+				matches = true;
+			} else {
+				matches = false;
+				break;
+			}
+		}
+		return matches;
 	}
 
 }
