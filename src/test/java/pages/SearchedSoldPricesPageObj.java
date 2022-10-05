@@ -51,33 +51,6 @@ public class SearchedSoldPricesPageObj {
 		return searchedHouseList;
 	}
 	
-	
-	
-	
-//	public Boolean propertyTypeMatches(String propTypeName) {
-//		Boolean matches = null;
-//		for (WebElement eachType : propTypeList) {
-//			if (eachType.getText().trim().contains(propTypeName)) {
-//				matches = true;
-//			} else {
-//				matches = false;
-//				break;
-//			}
-//		}
-//		return matches;
-//	}
-//	public Boolean codeMatchesHousesListed() {
-//		Boolean matches = null;
-//		String locationInputField = locationField.getAttribute("value");
-//		for (WebElement eachSoldHouse : searchedHouseList) {
-//			if (eachSoldHouse.getText().contains(locationInputField)) {
-//				matches = true;
-//			} else {
-//				matches = false;
-//				break;
-//			}
-//		}
-//		return matches;
-//	}
+
 
 }

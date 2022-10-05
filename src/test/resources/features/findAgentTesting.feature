@@ -22,8 +22,7 @@ Feature: Varify findingAent
     And User enter email in textbox <email>
     And User enter phone number in textbox <phone>
     And User enter post code in textbox <postCode>
-    And User click on I have property to sell dropDown button choose option no
-    And User click on I have property to rent dropDown button choose option no
+    And User click on situation dropDown button choose option I have a property to sell
     And User click on radio button OntheMarket can Contact me with relevant properties choose no
     And User click submit button
     Then User should be on One Click Properties page

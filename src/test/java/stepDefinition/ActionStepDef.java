@@ -43,7 +43,6 @@ public class ActionStepDef extends CommonMethods {
 	public void click_on_search_button() {
 		ssp.getSearchButton().click();
 	}
-	
 
 //	Gulfire
 	@When("Hover On Buy menu tab")
@@ -74,7 +73,6 @@ public class ActionStepDef extends CommonMethods {
 	public void click_on_each_of_the_properties_below_cv_nb() {
 		rp.saleInHome.click();
 	}
-	
 
 //	Tukta
 	@When("User hover Agents button")
@@ -129,14 +127,9 @@ public class ActionStepDef extends CommonMethods {
 		cap.postcodeBox.sendKeys(string);
 	}
 
-	@When("User click on I have property to sell dropDown button choose option no")
-	public void user_click_on_i_have_property_to_sell_drop_down_button_choose_option_no() {
-		cm.selectByVisibleText(cap.IhavePropertyToSellBox, "No");
-	}
-
-	@When("User click on I have property to rent dropDown button choose option no")
-	public void user_click_on_i_have_property_to_rent_drop_down_button_choose_option_no() {
-		cm.selectByVisibleText(cap.IhavePropertyToRentBox, "No");
+	@When("User click on situation dropDown button choose option I have a property to sell")
+	public void user_click_on_situation_drop_down_button_choose_option_i_have_a_property_to_sell() {
+		cm.selectByVisibleText(cap.situationBox, "I have a property to sell");
 	}
 
 	@When("User click on radio button OntheMarket can Contact me with relevant properties choose no")
@@ -151,7 +144,6 @@ public class ActionStepDef extends CommonMethods {
 		cap.submitBtn.click();
 
 	}
-	
 
 //	Nariman
 	@When("User hover Agents menu tab")
@@ -223,166 +215,159 @@ public class ActionStepDef extends CommonMethods {
 	public void user_clicks_send_button() {
 		pv.send.click();
 	}
-	
-	
+
 //	Christian
 	@When("User hovers over Value my home tab")
-    public void user_hovers_over_value_my_home_tab() {
-    cm.hover(hp.getValueMyHome());
-    cm.wait(1);
+	public void user_hovers_over_value_my_home_tab() {
+		cm.hover(hp.getValueMyHome());
+		cm.wait(1);
 
-    }
+	}
 
-    @Then("click on Home Price Guide")
-    public void click_on_home_price_guide() {
-        hp.getHomePriceGuide().click();
-        cm.wait(1);
-    
-    }
+	@Then("click on Home Price Guide")
+	public void click_on_home_price_guide() {
+		hp.getHomePriceGuide().click();
+		cm.wait(1);
 
-    @Then("Verify that Home Price Guide tab is selected")
-    public void verify_that_home_price_guide_tab_is_selected() {
-        hpg.homePriceGuideSearch.isSelected();
-        cm.wait(1);
-    }
+	}
 
-    @Then("Click on Agent Valuation tab and verify it is selected")
-    public void click_on_agent_valuation_tab_and_verify_it_is_selected() {
-        hpg.agentValuation.click();
-        hpg.agentValuation.isSelected();
-        cm.wait(1);
-    }
+	@Then("Verify that Home Price Guide tab is selected")
+	public void verify_that_home_price_guide_tab_is_selected() {
+		hpg.homePriceGuideSearch.isSelected();
+		cm.wait(1);
+	}
 
-    @Then("Click on Instant Valuation tab and verify it is selected")
-    public void click_on_instant_valuation_tab_and_verify_it_is_selected() {
-        hpg.instantValuation.click();
-        hpg.instantValuation.isSelected();
-        cm.wait(1);
-    }
+	@Then("Click on Agent Valuation tab and verify it is selected")
+	public void click_on_agent_valuation_tab_and_verify_it_is_selected() {
+		hpg.agentValuation.click();
+		hpg.agentValuation.isSelected();
+		cm.wait(1);
+	}
 
-    @Then("Enter postcode and hit enter")
-    public void enter_postcode_and_hit_enter() {
-        hpg.searchBar.sendKeys(BaseClass.getProperty("postcode"));
-        hpg.searchBar.sendKeys(Keys.ENTER);
-        cm.wait(1);
-    }
-    
-    
+	@Then("Click on Instant Valuation tab and verify it is selected")
+	public void click_on_instant_valuation_tab_and_verify_it_is_selected() {
+		hpg.instantValuation.click();
+		hpg.instantValuation.isSelected();
+		cm.wait(1);
+	}
+
+	@Then("Enter postcode and hit enter")
+	public void enter_postcode_and_hit_enter() {
+		hpg.searchBar.sendKeys(BaseClass.getProperty("postcode"));
+		hpg.searchBar.sendKeys(Keys.ENTER);
+		cm.wait(1);
+	}
+
 //	Gulgena
-    
-    @When("Hover on New Homes Tab")
-    public void hover_on_new_homes_tab() {
-    cm.hoverOnMenuTab("New homes");
-    }
 
- 
-    @When("Click on the New homes for sale")
-    public void click_on_the_new_homes_for_sale() {
-        cm.clickOnDropDownTab("New homes for sale");
-    }
+	@When("Hover on New Homes Tab")
+	public void hover_on_new_homes_tab() {
+		cm.hoverOnMenuTab("New homes");
+	}
 
-    @When("Write a  UK zip code  in the  question box {string}")
-    public void write_a_uk_zip_code_in_the_question_box(String string) {
-        nfs.AddressInput.sendKeys(string);
-        nfs.SearchButton.click();
-    }
+	@When("Click on the New homes for sale")
+	public void click_on_the_new_homes_for_sale() {
+		cm.clickOnDropDownTab("New homes for sale");
+	}
 
-    @When("we click on the houses for sale tab")
-    public void we_click_on_the_houses_for_sale_tab() {
-        nfs.houseForSale.click();
-    }
+	@When("Write a  UK zip code  in the  question box {string}")
+	public void write_a_uk_zip_code_in_the_question_box(String string) {
+		nfs.AddressInput.sendKeys(string);
+		nfs.SearchButton.click();
+	}
 
-    @When("Write a zip code  in the  question box {string}")
-    public void write_a_zip_code_in_the_question_box(String string) {
-         nfs.AddressInput.sendKeys(string);
-         nfs.SearchButton.click();
-    }
+	@When("we click on the houses for sale tab")
+	public void we_click_on_the_houses_for_sale_tab() {
+		nfs.houseForSale.click();
+	}
 
+	@When("Write a zip code  in the  question box {string}")
+	public void write_a_zip_code_in_the_question_box(String string) {
+		nfs.AddressInput.sendKeys(string);
+		nfs.SearchButton.click();
+	}
 
 //	Larry
 	@Then("User accepts cookies")
 	public void user_accepts_cookies() {
-	    wait(5);
+		wait(5);
 		hp.getCookiesAccept().click();
 	}
-	
+
 	@Then("User should open New Homes menu")
 	public void user_should_open_new_homes_menu() {
-	    hover(hp.getMainNavMenu().get(4));
-	    wait(1);
+		hover(hp.getMainNavMenu().get(4));
+		wait(1);
 	}
-	
+
 	@Then("click on Find Developments")
 	public void click_on_find_developments() {
-	    hp.getNewHomesMenu().get(1).click();
+		hp.getNewHomesMenu().get(1).click();
 	}
-	
+
 	@Then("put {string} into the search box")
 	public void put_into_the_search_box(String string) {
-	    fdp.getFindDevSearchBox().sendKeys(string);
-	    wait(1);
+		fdp.getFindDevSearchBox().sendKeys(string);
+		wait(1);
 	}
-	
+
 	@Then("send a search request")
 	public void send_a_search_request() {
 		fdp.getFindDevSearchBox().sendKeys(Keys.RETURN);
 		scrollByPixel(100);
 		fdp.getFindDevSearchButton().click();
 	}
-	
+
 //	Jandrey
 	@Given("User click on Sign in button")
 	public void user_click_on_sign_in_button() {
-	   
-	    sfp.signInButton.click();
-	}
 
+		sfp.signInButton.click();
+	}
 
 	@When("User provide {string}")
 	public void user_provide(String string) {
-	  
-	    sfp.enterEmail.sendKeys(string);
+
+		sfp.enterEmail.sendKeys(string);
 	}
 
 	@When("User click next button")
 	public void user_click_next_button() {
-	  
-	    sfp.nextButton.click();
-	    
+
+		sfp.nextButton.click();
+
 	}
 
 	@When("User provide now {string}")
 	public void user_provide_now(String string) {
-	   
-	    sfp.password.sendKeys(string);
-	    
-	}
 
+		sfp.password.sendKeys(string);
+
+	}
 
 	@Then("User click on login button")
 	public void user_click_on_login_button() {
-	    sfp.SignInPasswordButton.click();
-	    
+		sfp.SignInPasswordButton.click();
+
 	}
-	
+
 	@When("User select Forgotten password")
 	public void user_select_forgotten_password() {
-	  
-	    sfp.forgottenPassword.click();
-	    
+
+		sfp.forgottenPassword.click();
+
 	}
-	
+
 	@Then("User click to reset a code")
 	public void user_click_to_reset_a_code() {
-	  
-	    sfp.sendResetCode.click();
+
+		sfp.sendResetCode.click();
 	}
 
 	@When("User reset {string}")
 	public void user_reset(String string) {
-	 
-	    sfp.ResetEmail.sendKeys(string);
+
+		sfp.ResetEmail.sendKeys(string);
 	}
 
-	
 }

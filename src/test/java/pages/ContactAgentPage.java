@@ -41,5 +41,7 @@ public class ContactAgentPage {
 	@FindBy(xpath="//*[@id='ab-contact-form-submit']")
 	public WebElement submitBtn;
 	
+	@FindBy(xpath= "//*[@id='situation']")
+    public WebElement situationBox;
 	
 }
