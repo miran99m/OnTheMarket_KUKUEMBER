@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/features"
 		,glue={"stepDefinition"},
 		dryRun = false,
-		tags = "@Tukta and @VerifyFindingAgent or @VerifyPickingAgent"
+		tags = "@ltest2"
 		
 		)
 
