@@ -6,9 +6,7 @@ Feature: Find Developments
 	
 	@ltest1
   Scenario: Accepting Cookies
-    And User is asked to accept cookies
-    Then User accepts cookies
-    * cookies accept request should be gone
+    Then cookies accept request should be gone
     
 	@ltest2
 	Scenario: New Developments Search

@@ -288,33 +288,28 @@ public class ActionStepDef extends CommonMethods {
 	}
 
 //	Larry
-	@Then("User accepts cookies")
-	public void user_accepts_cookies() {
-		wait(5);
-		hp.getCookiesAccept().click();
-	}
-
 	@Then("User should open New Homes menu")
 	public void user_should_open_new_homes_menu() {
+		waitForVisibility(hp.getMainNavMenu().get(4));
 		hover(hp.getMainNavMenu().get(4));
-		wait(1);
 	}
 
 	@Then("click on Find Developments")
 	public void click_on_find_developments() {
+		waitForVisibility(hp.getNewHomesMenu().get(1));
 		hp.getNewHomesMenu().get(1).click();
 	}
 
 	@Then("put {string} into the search box")
 	public void put_into_the_search_box(String string) {
+		waitForVisibility(fdp.getFindDevSearchBox());
 		fdp.getFindDevSearchBox().sendKeys(string);
-		wait(1);
 	}
 
 	@Then("send a search request")
 	public void send_a_search_request() {
+		waitForVisibility(fdp.getSearchSuggestion());
 		fdp.getFindDevSearchBox().sendKeys(Keys.RETURN);
-		scrollByPixel(100);
 		fdp.getFindDevSearchButton().click();
 	}
 
