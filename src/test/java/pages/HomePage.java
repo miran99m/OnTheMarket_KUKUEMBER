@@ -10,67 +10,66 @@ import Utilities.BaseClass;
 
 public class HomePage {
 
-
 	public HomePage() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[2]/a/span")
 	private WebElement buyOption;
-	
+
 	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[4]/a/span")
 	private WebElement agentBtn;
 
-	@FindBy (xpath="//*[@id='otm-main-nav']/div[1]/div/nav/ul/li[4]/div/div/div[2]/div[1]/div/div[2]/div/a")
+	@FindBy(xpath = "//*[@id='otm-main-nav']/div[1]/div/nav/ul/li[4]/div/div/div[2]/div[1]/div/div[2]/div/a")
 	private WebElement bookAnAgentVisit;
-  
-  @FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[1]/a/span")
-  private WebElement valueMyHome;
-    
-  @FindBy(xpath = "//*[ @href='/price-guide/']")
-  private WebElement homePriceGuide;
-	
-	@FindBy(xpath="//*[@id='app-container']/div/div/div/div/button")
+
+	@FindBy(xpath = "//*[@id=\"otm-main-nav\"]/div[1]/div/nav/ul/li[1]/a/span")
+	private WebElement valueMyHome;
+
+	@FindBy(xpath = "//*[ @href='/price-guide/']")
+	private WebElement homePriceGuide;
+
+	@FindBy(xpath = "//*[@id='app-container']/div/div/div/div/button")
 	private WebElement cookiesAccept;
-	
-	@FindBy(xpath="//*[@id='otm-main-nav']/div/div/nav/ul/li")
+
+	@FindBy(xpath = "//*[@id='otm-main-nav']/div/div/nav/ul/li")
 	private List<WebElement> mainNavMenu;
-	
-	@FindBy(xpath="//*[@id='otm-main-nav']/div/div/nav/ul/li[5]/div/div/div/ul/li")
+
+	@FindBy(xpath = "//*[@id='otm-main-nav']/div/div/nav/ul/li[5]/div/div/div/ul/li")
 	private List<WebElement> newHomesMenu;
-	
+
 	@FindBy(xpath = "//*[@id='headlessui-tabs-tab-2']")
 	public WebElement rentButton;
-	
+
 	public WebElement getBuyOption() {
 		return buyOption;
 	}
-	
+
 	public WebElement getAgentBtn() {
 		return agentBtn;
 	}
-	
+
 	public WebElement getBookAnAgentVisit() {
 		return bookAnAgentVisit;
 	}
-  
-  public WebElement getValueMyHome(){
-    return valueMyHome;
-  }
-  
-  public WebElement getHomePriceGuide(){
-    return homePriceGuide;
-  }
-	
+
+	public WebElement getValueMyHome() {
+		return valueMyHome;
+	}
+
+	public WebElement getHomePriceGuide() {
+		return homePriceGuide;
+	}
+
 	public WebElement getCookiesAccept() {
 		return cookiesAccept;
 	}
-	
-	public List<WebElement> getMainNavMenu(){
+
+	public List<WebElement> getMainNavMenu() {
 		return mainNavMenu;
 	}
-	
-	public List<WebElement> getNewHomesMenu(){
+
+	public List<WebElement> getNewHomesMenu() {
 		return newHomesMenu;
 	}
 

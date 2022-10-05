@@ -15,13 +15,13 @@ public class Hooks {
 	@After
 	public void end(Scenario scenario) {
 		
-//		byte[] pic;
-//		if(scenario.isFailed()) {
-//			pic=CommonMethods.takeScreenshot("Failed/" + scenario.getName());
-//		}else {
-//			pic=CommonMethods.takeScreenshot("Pass/" + scenario.getName());
-//		}
-//		scenario.attach(pic, "image/png", scenario.getName());
+		byte[] pic;
+		if(scenario.isFailed()) {
+			pic=CommonMethods.takeScreenshot("Failed/" + scenario.getName());
+		}else {
+			pic=CommonMethods.takeScreenshot("Pass/" + scenario.getName());
+		}
+		scenario.attach(pic, "image/png", scenario.getName());
 		BaseClass.tearDown();
 	}
 
