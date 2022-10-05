@@ -115,7 +115,7 @@ public class Assertion_StepDefs extends CommonMethods {
 // 	Larry
 	@Then("cookies accept request should be gone")
 	public void cookies_accept_request_should_be_gone() {
-		Assert.assertTrue(isElementDisplayed(hp.getCookiesAccept()));
+		Assert.assertFalse(isElementDisplayed(hp.getCookiesAccept()));
 	}
 
 	@When("User is on Find Developments")
